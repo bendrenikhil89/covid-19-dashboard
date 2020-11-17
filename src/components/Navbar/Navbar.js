@@ -8,7 +8,7 @@ function NavBar() {
             <label className="navbar-toggle" id="js-navbar-toggle" htmlFor="chkToggle">
                     <i className="fa fa-bars"></i>
             </label>
-            <Link to="/" className="logo">Covid-19 Dashboard</Link>
+            <label to="/" className="logo">Covid-19 Dashboard</label>
             <input type="checkbox" id="chkToggle"></input>
             <ul className="main-nav" id="js-menu">
                 <li>

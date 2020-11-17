@@ -83,9 +83,8 @@
       display: none;
     }
   
-    .logo:hover,
     .nav-links:hover {
-      color: #ccc;
+      color: rgb(240, 237, 233);
     }
   }
 

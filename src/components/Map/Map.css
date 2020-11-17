@@ -26,10 +26,11 @@
   }
   
   .info-flag {
-    height: 100px;
-    width: 100%;
-    background-size: cover;
-    border-radius: 8px;
+    height: 50px;
+    width: 100px;
+    background-size: contain;
+    /* border-radius: 8px; */
+    background-repeat: no-repeat;
   }
   
   .info-confirmed,

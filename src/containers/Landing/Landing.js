@@ -22,7 +22,7 @@ function Landing() {
     const [mapCountries, setMapCountries] = useState([]);
     const [tableData, setTableData] = useState([]);
     const [casesType, setCasesType] = useState("cases");
-    const [mapCenter, setMapCenter] = useState({ lat: 34.80746, lng: -40.4796 });
+    const [mapCenter, setMapCenter] = useState({ lat: 20.5937, lng: 78.9629 });
     const [mapZoom, setMapZoom] = useState(4);
   
     useEffect(() => {
@@ -53,7 +53,8 @@ function Landing() {
     }, []);
   
     const onCountryChange = async (e) => {
-      const countryCode = e.target.value;
+      //const countryCode = e.target.value;
+      const countryCode = e.target.attributes.code.value;
   
       const url =
         countryCode === "worldwide"
@@ -64,7 +65,7 @@ function Landing() {
         .then((data) => {
           setInputCountry(countryCode);
           setCountryInfo(data);
-          setMapCenter([data.countryInfo.lat, data.countryInfo.long]);
+          countryCode === "worldwide" ? setMapCenter([20.5937, 78.9629]) : setMapCenter([data.countryInfo.lat, data.countryInfo.long]);
           setMapZoom(4);
         });
     };
@@ -116,7 +117,7 @@ function Landing() {
                 <div className="box2">
                     <div className="childbox3">
                         <h3>Live Cases by Country</h3>
-                        <Table countries={tableData} />
+                        <Table countries={tableData} click={onCountryChange} totalCases={countryInfo.cases} />
                     </div>
                     <div className="childbox4">
                         <h3>Worldwide new {casesType}</h3>

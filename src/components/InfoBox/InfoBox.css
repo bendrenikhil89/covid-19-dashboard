@@ -1,5 +1,5 @@
 .infoBox {
-    flex: 1 1;
+    flex: 1;
     cursor: pointer;
   }
 
@@ -8,15 +8,19 @@
   }
   
   .infoBox--selected {
-    border-top: 10px solid greenyellow;
+    border-top: 10px solid #34a234;
   }
   
   .infoBox--red {
-    border-color: red;
+    border-color: #cc1034;
   }
   
+  .dashboard__stats{
+    display: flex;
+  }
+
   .infoBox__cases--green {
-    color: lightgreen !important;
+    color: #34a234 !important;
   }
   
   .infoBox__cases {
@@ -32,3 +36,30 @@
     font-size: 0.8rem !important;
     margin-top: 15px !important;
   }
+
+  .fontawesome-icon{
+    font-size:50px;
+    float:right;
+  }
+
+  @media (max-width: 768px) {
+    .fontawesome-icon { 
+      display:none;
+    }
+  }
+
+  @media (max-width: 568px) {
+    .dashboard__stats {
+      display: block;
+    }
+    .infoBox:not(:last-child) {
+      margin: 20px 0px;
+    }
+  }
+
+  @media screen and (max-width:968px) {
+    .fontawesome-icon{
+         display: none;
+     }
+ }
+  

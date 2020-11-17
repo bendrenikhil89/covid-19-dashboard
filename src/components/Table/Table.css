@@ -1,10 +1,6 @@
 .table{
-    margin-top:20px;
-    overflow-y: scroll;
-    height:55vh;
     color:#6a5d5d;
-    display: block;
-    width: 100%;
+    height:calc(100vh - 300px);
 }
 
 .table tr:nth-of-type(odd){
@@ -19,9 +15,3 @@
 .table td{
     padding: 0.5rem;
 }
-
-@media screen and (min-width: 2500px) and (max-width: 4000px) {
-    .table { 
-      height:61vh;
-    }
-  }

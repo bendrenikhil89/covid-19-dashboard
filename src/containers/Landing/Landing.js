@@ -34,7 +34,7 @@ function Landing() {
     }, []);
   
     useEffect(() => {
-      const getCountriesData = async () => {
+      const getCountriesData = () => {
         fetch("https://disease.sh/v3/covid-19/countries")
           .then((response) => response.json())
           .then((data) => {
@@ -52,7 +52,7 @@ function Landing() {
       getCountriesData();
     }, []);
   
-    const onCountryChange = async (e) => {
+    const onCountryChange = (e) => {
       //const countryCode = e.target.value;
       const countryCode = e.target.attributes.code.value;
   
@@ -60,7 +60,7 @@ function Landing() {
         countryCode === "worldwide"
           ? "https://disease.sh/v3/covid-19/all"
           : `https://disease.sh/v3/covid-19/countries/${countryCode}`;
-      await fetch(url)
+       fetch(url)
         .then((response) => response.json())
         .then((data) => {
           setInputCountry(countryCode);
@@ -71,7 +71,7 @@ function Landing() {
     };
 
     return (
-        <React.Fragment>
+        <>
             <div className="main-container">
                 <div className="box1">
                     <div className="childbox1">
@@ -125,7 +125,7 @@ function Landing() {
                     </div>
                 </div>
             </div>
-        </React.Fragment>
+        </>
     )
 }
 
